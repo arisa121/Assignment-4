@@ -7,7 +7,7 @@ function totalFine( fare ) {
     return fine;
 }
 
-// ----------------------------------------------------
+
 
 function onlyCharacter(str) {
   // You have to write your code here
@@ -18,5 +18,68 @@ function onlyCharacter(str) {
   return value;
 }
 
-// ----------------------------------------------------
 
+function  bestTeam( player1, player2 ) {
+    // You have to write your code here
+    if(typeof player1!=="object" || typeof player2 !== "object"){
+        return "Invalid";
+    }
+    let team1 = player1.foul + player1.cardY + player1.cardR;
+    let team2 = player2.foul + player2.cardY + player2.cardR;
+    if(team1 > team2){
+        return player1.name;
+    }
+    else if(team1 === team2){
+        return 'Tie'
+    }
+    return player2.name;
+
+}
+
+function isSame(arr1, arr2) {
+    // You have to write your code here
+    if(!Array.isArray(arr1) || !Array.isArray(arr2)){
+        return 'Invalid';
+    }
+    if(arr1.length !== arr2.length){
+        return false;
+    }
+
+
+    for(let i = 0;i <arr1.length;i++){
+       
+        if(arr1[i] !== arr2[i]){
+            return false;
+        }
+    
+    }
+    return true;
+}
+
+
+
+function resultReport(marks) {
+  // You have to write your code here
+  if(!Array.isArray(marks)){
+    return 'Invalid'
+  }
+  let total = 0;
+  let passCount = 0;
+  let failCount = 0;
+  for(let mark of marks){
+    total = total + mark;
+    if(mark >= 40){
+        passCount++;
+    }
+    else{
+        failCount++;
+    }
+  }
+  let finalScore = Math.round(total / marks.length);
+  return{
+    finalScore: finalScore,
+    pass: passCount,
+    fail: failCount
+  };
+
+}
