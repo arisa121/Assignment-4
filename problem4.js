@@ -17,3 +17,5 @@ function isSame(arr1, arr2) {
     }
     return true;
 }
+const result = isSame([1, 2, 3] , [1 , 2 , 3])
+console.log(result)

@@ -3,6 +3,8 @@ function onlyCharacter(str) {
   if (typeof str !== "string") {
     return "Invalid";
   }
-  let value = str.replace(/\s+/g, '');
+  let value = str.replace(/\s+/g, '').toUpperCase();
   return value;
 }
+const result = onlyCharacter("Serv er : : Do wn")
+console.log(result)

@@ -6,3 +6,5 @@ function totalFine( fare ) {
     let fine = fare + fare*(20/100) + 30;
     return fine;
 }
+const result = totalFine(200)
+console.log(result)
